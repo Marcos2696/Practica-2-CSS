@@ -1,0 +1,102 @@
+/*ANOTACION POR SI NOS PASA MAS VECES:
+ES POSIBLE QUE AL AÑADIRLE UN PADDING A TODAS LAS TARJETAS, SE NOS DESCOLOQUEN POR COMPLETO DE POSICION Y SE SUBAN LA UNA A LA OTRA. PARA SOLUCIONAR ESTO ABRIMOS EL SELECTOR UNIVERSAL:
+
+*{
+    box-sizing: border-box;   CON ESTO CONSEGUIMOS QUE EL PADDING SE CALCULE POR DENTRO
+
+}
+
+*/
+
+body{
+    background-color: hsl(0, 0%, 93%);
+    text-align: center; /*LO PRIMERO ES CENTRAR TODO EN GENERAL*/
+    font-weight: 400;
+  
+}
+
+.titulo{ /*LOS DOS TITULOS JUNTOS*/
+    display: block; /*PARA HACER QUE DOS SPAN SE COMPORTEN COMO UN ELEMENTO DE LINEA Y SALTEN DE LINEA LE PONEMOS ESTO, ASI SE QUEDAN AMBOS EN DOS LINEAS Y NO TODO EN UNA.*/
+   font-size: 2.5rem;
+}
+
+/*AQUI ESTAMOS DANDO DOS ESTILOS DIFERENTES AL H1, RECUERDA QUE LO HACEMOS MEDIANTE EL <span> */
+.titulo1{
+    font-weight:200;
+}
+
+.titulo2{
+    font-weight: 600;
+
+}
+
+.subtitulo{
+    width: 30%;
+    margin-left: auto; /*Es un elemento en bloque y lo centramos así, mirar apuntes*/
+    margin-right: auto;
+    text-align: left; /*PORQUE ESTO SI QUE ES PARA EL PROPIO TEXTO*/
+    
+}
+
+.cards{ /*BLOQUE PRINCIPAL QUE ENGLOBA TODAS LAS TARJETAS*/
+    position: relative;/*ESTE VA IR CON UN RELATIVE Y LAS TARJETAS DE DENTRO CON UN ABSOLUTE*/
+    width: 1250px;
+    height: 600px;
+    /*MEDIDAS DEL CONTENEDOR PRINCIPAL*/
+    margin: 5em auto;
+}
+
+.card{ /*LAS CUATRO TARJETAS*/
+    position: absolute;
+    width: 350px; /*MUY MUY IMPORTANTE: RECUERDA QUE AL PONER ABSOLUTE PIERDE TAMBIEN SUS MEDIDAS Y HAY QUE DARLE UNAS MEDIDAS CLARAS (width y height*/
+    height:250px;
+    border-radius: 10px;
+    box-shadow:5px 10px 10px  ; /*LA SOMBRITA DE TODAS LAS CAJAS*/
+    background-color: hsl(0, 0%, 93%);
+    padding: 15px;
+    
+    
+}
+
+/*AHORA LO QUE VAMOS A IR HACIENDO ES POSICIONAR CADA TARJETA EN SU SITIO, RECUERDA QUE TODAS LAS TARJETAS ESTAN EN POSITION:ABSOLUTE Y QUE ESTAN LIMITADAS POR EL CONTENEDOR PRINCIPAL QUE LAS ENGLOBA*/
+
+.card1{
+    left: 0;
+    top: 150px;
+    text-align: left;
+    border-top: 5px solid cyan ;
+    
+
+}
+
+.card2{
+    bottom: 0;
+    left: 425px;
+    text-align: left;
+    border-top: 5px solid yellow ;
+
+}
+
+.card3{
+    right: 0;
+    top: 150px;
+    text-align: left;
+    border-top: 5px solid blue ;
+    
+
+}
+
+.card4{
+    top: 0;
+    left: 425px;
+    text-align: left;
+    border-top: 5px solid red ;
+
+}
+
+.card_icon{
+    display: block;
+    margin-left: auto;/*YO LO HE ALINEADO A LA IZQUIERDA ASÍ JEJE*/
+
+
+}
